@@ -1,0 +1,642 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8dc03;
+    padding: 10px 20px;
+    color: black;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+    height: 35px; 
+}
+
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+   
+}
+
+/* Hero Section */
+header {
+    padding: 20px 20px;
+    background-color: #ffffff;
+}
+
+header h1 {
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.banner {
+    width: 70%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload Section */
+.upload-section {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section input {
+    margin: 10px 0;
+}
+
+.upload-section button {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-section button:hover {
+    background: #f1c40f;
+    color: #2c3e50;
+}
+
+/* Preview Section */
+.preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.preview img {
+    max-width: 700px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* Results Section */
+.results {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.results button {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.results button:hover {
+    background: #2ecc71;
+}
+
+/* Output Image Section */
+.processed-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.processed-image img {
+    max-width: 700px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* Chart Section */
+.chart-container {
+    width: 30%;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section in Homepage */
+#about {
+    text-align: center;
+    background: #f8f8f8;
+    padding: 50px 20px;
+    margin-top: 40px;
+}
+
+#about h2 {
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+#about p {
+    font-size: 18px;
+    color: #555;
+    width: 60%;
+    margin: 10px auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #f1c40f;
+    color: black;
+}
+/* About Section */
+.about-container {
+    width: 70%;
+    height: 60%;
+    max-width: 900px;
+    background: rgb(252, 248, 248);
+    padding: 40px;
+    border-radius: 10px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.feature-box {
+    width: 35%;
+    background: rgba(137, 255, 180, 0.971);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.feature-box span {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #f1c40f;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+/* Compact Footer Styles */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 10px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #f1c40f;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 3px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f1c40f;
+}
+
+.footer-bottom {
+    margin-top: 5px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 5px;
+}
+
+/* ===== Login Page Styles ===== */
+.login-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    min-height: 70vh;
+}
+
+.login-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ===== Dashboard Styles ===== */
+.dashboard-header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/dashboard-bg.jpg');
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.dashboard-content {
+    padding: 40px 5%;
+}
+
+.dashboard-results {
+    margin-top: 40px;
+}
+
+.result-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Registration Form Styles */
+.form-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    min-height: 70vh;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+  #calorie-summary {
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  #calorie-summary h3 {
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 1.5rem;
+  }
+
+  #calorie-summary strong {
+    font-size: 1.3rem;
+    color: #007bff;
+  }
+
+  #meal-table-body td, #meal-table-body th {
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+
+  #calorie-summary table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+
+  #calorie-summary th {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: bold;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #222;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+canvas {
+    width: 100% !important;
+    max-height: 400px;
+}
+
+/* ===== Admin Dashboard Attendance ===== */
+/* Card Styling */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+/* Attendance Section */
+#dateFilter {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.attendance-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 30px;
+}
+
+.attendance-summary div {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 12px;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.attendance-summary h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.attendance-summary p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007BFF;
+    margin: 0;
+}
+
+/* Center header */
+.card > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Graph display */
+.student-list {
+    padding: 20px;
+}
+.student-list ul {
+    list-style: none;
+    padding: 0;
+}
+.student-list li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+.student-list li:hover {
+    background: #dceeff;
+}

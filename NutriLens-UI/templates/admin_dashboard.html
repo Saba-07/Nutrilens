@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Classification & Calorie Estimation System </title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Pie Chart Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+</head><body>
+       <!-- Navbar -->
+       <nav>
+        <div class="logo">NutriLens - Food Calorie Estimator</div>
+        <ul>
+
+        {% if session.get('username') %}
+            <li style="margin-right: 10px; font-weight: bold;">Welcome, {{ session.get('username')}}</li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+
+        </ul>
+    </nav>
+
+     <!-- Hero Section -->
+     <header>
+        <h1>Food Classification & Calorie Estimation System </h1>
+        <img src="{{ url_for('static', filename='img2.jpg') }}" alt="Delicious Food" class="banner">
+    </header>
+
+    <div class="admin-container">
+        <h1>Admin</h1>
+        <div class="card">
+            <h2>Attendance Summary</h2>
+        
+            <div style="text-align:center;">
+                <label for="dateFilter">Select Date Range:</label>
+                <select id="dateFilter" onchange="fetchAttendanceData()">
+                    <option value="today">Today</option>
+                    <option value="month">This Month</option>
+                </select>
+            </div>
+        
+            <div class="attendance-summary">
+                <div>
+                    <h3>Present Students</h3>
+                    <p id="presentCount">0</p>
+                </div>
+                <div>
+                    <h3>Absent Students</h3>
+                    <p id="absentCount">0</p>
+                </div>
+            </div>
+        </div>   
+
+        <!--All logs fetch-->
+        <nav>
+            <!--<a href="{{ url_for('admin_logs') }}" id="showLogsBtn">All Logs</a>-->
+            <button id="showLogsBtn">All Logs</button>
+        </nav>
+    
+        <div class="card" id="logsTableCard" style="display: none;">
+            <h2>All Users' Prediction Logs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Food Name</th>
+                        <th>Calories</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="logsTableBody">
+                  
+                </tbody>
+            </table>
+        </div>
+    
+        <!--All students summary graph-->
+        <div class="card">
+            <h2>Student Access Summary</h2>
+            <div class="student-list">
+                <label for="monthSelect">Select Month:</label>
+                <select id="monthSelect" onchange="loadStudentAccess()">
+                    <option value="{{ current_month }}">This Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                
+                <!--All students graph-->
+                <div id="accessChartCard" style="margin-bottom: 30px;">
+                    <h3 style="text-align:center;">Student Access Summary (Graph)</h3>
+                    <canvas id="accessChart" width="400" height="200"></canvas>
+                  </div>
+                  
+                <!--Present Students list-->
+                <ul id="studentList"></ul>
+            </div>
+        </div>
+
+        <!--Specific student calorie graph-->
+        <div class="card" id="studentChartCard" style="display:none;">
+            <h2 id="studentNameHeader"></h2>
+            <canvas id="studentChart"></canvas>
+        </div>
+    </div>
+    
+
+
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About</h3>
+            <p>This system helps monitor and analyze the nutritional quality of Mid-Day Meals provided to schoolchildren, ensuring they receive a balanced diet.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{{ url_for('home') }}"> Home</a></li>
+                <li><a href="{{ url_for('about') }}"> About</a></li>
+                <li><a href="{{ url_for('login') }}"> Login</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            
+            <p> Email: support@middaymealanalyzer.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Mid-Day Meal Nutrition Analyzer | Designed for a Healthier Future 🌱</p>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Classification & Calorie Estimation System </title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Pie Chart Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+</head><body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">NutriLens - Food Calorie Estimator</div>
+        <ul>
+
+        {% if session.get('username') %}
+            <li style="margin-right: 10px; font-weight: bold;">Welcome, {{ session.get('username')}}</li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <h1>Food Classification & Calorie Estimation System </h1>
+        <img src="{{ url_for('static', filename='food_street.webp.jpg') }}" alt="Delicious Food" class="banner">
+    </header>
+
+    <!-- Image Upload Section -->
+    <form id="uploadForm" onsubmit="event.preventDefault(); generateResults();">
+    <section class="upload-section">
+        <h2>Upload Your Food Image</h2>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button type="button" onclick="previewImage()">📷 Show Image</button>
+    </section>
+
+    <!-- Image Preview -->
+    <div class="preview">
+        <h3>Image Preview</h3>
+        <img id="uploadedImage" src="" alt="Uploaded Food Image">
+    </div>
+
+    <!-- Prediction Results -->
+    <div class="results">
+        <h2>Prediction Results</h2>
+        <p><strong>🔥 Estimated Calories:</strong> <span id="total_calories">0 kcal</span></p>
+        <button type="submit">🔍 Predict</button>
+    </div>    
+    
+    <!-- Display Processed Image with Bounding Boxes -->
+    <div class="processed-image">
+        <h3>Processed Image</h3>
+        <img id="resultImage" src="" alt="Processed Food Image">
+    </div>
+
+   <!-- Nutrition Pie Chart -->
+    <div class="chart-container">
+    <h2>🥗 Nutrition Breakdown</h2>
+    <canvas id="nutritionChart"></canvas>
+</div>
+</form>
+
+<!-- Monthly Calorie Summary -->
+<div id="calorie-summary" style="display: none;">
+  
+    <h2 id="monthly-summary-title"></h2>
+    <p id="monthly-total-calories"></p>
+    <table id="monthlyTable" border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Food Name</th>
+                <th>Calories</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+  </div>
+  
+  <!-- Optional Trigger Button -->
+  <button onclick="loadMonthlyCalorieDetails()">Load Monthly Summary</button>
+<br> <br>  
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About</h3>
+            <p>This system helps monitor and analyze the nutritional quality of Mid-Day Meals provided to schoolchildren, ensuring they receive a balanced diet.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{{ url_for('home') }}"> Home</a></li>
+                <li><a href="{{ url_for('about') }}"> About</a></li>
+                <li><a href="{{ url_for('login') }}"> Login</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            
+            <p> Email: support@middaymealanalyzer.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Mid-Day Meal Nutrition Analyzer | Designed for a Healthier Future 🌱</p>
+    </div>
+</footer>
+
+<script>
+    const isUserLoggedIn = "{{ 'true' if session.get('email') else 'false' }}";
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+

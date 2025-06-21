@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Food Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">NutriLens - Food Calorie Estimator</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- About Content -->
+    <div class="about-container">
+        <h1>🚀 Why We Made This System?</h1>
+        <p>Malnutrition is a significant challenge affecting millions of children, impacting their growth, development, and overall well-being. The Mid-Day Meal Scheme, initiated by the government, aims to provide nutritious meals to schoolchildren, ensuring they receive the necessary daily nutrients. However, ensuring the quality and nutritional adequacy of these meals remains a challenge.
+
+            Our AI-driven system is designed to analyze food images from mid-day meals, estimate caloric value and essential nutrients, and help authorities monitor whether children are receiving a balanced and adequate diet.</p>
+
+        <h2>Features of Our System</h2>
+        <div class="features">
+            <div class="feature-box">
+                <span>📸</span>
+                <h3>Image Upload</h3>
+                <p>Upload an image of food and get an instant classification.</p>
+            </div>
+            <div class="feature-box">
+                <span>🔥</span>
+                <h3>Calorie Estimation</h3>
+                <p>Get an estimated calorie count to maintain a balanced diet.</p>
+            </div>
+            <div class="feature-box">
+                <span>📊</span>
+                <h3>Nutrition Analysis</h3>
+                <p>Visualize nutrition details using pie charts.</p>
+            </div>
+            <div class="feature-box">
+                <span>💡</span>
+                <h3>Diet Awareness</h3>
+                <p>Helps users make informed dietary choices.</p>
+            </div>
+        </div>
+
+        <a href="{{ url_for('home') }}" class="btn">⬅ Go Back to Home</a>
+    </div>
+
+</body>
+</html>
